@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap 101 Template</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <ul class="nav nav-tabs">
+            <li role="presentation" class="active">
+                <a href="#">Home</a>
+            </li>
+            <li role="presentation">
+                <a href="#">Profile</a>
+            </li>
+            <li role="presentation">
+                <a href="#">Messages</a>
+            </li>
+        </ul>
+        <div class="row">
+            <div class="row">
+                <div class="col-md-8">
+                    <h1>用户输入数据</h1>
+                </div>
+                <div class="col-md-4">
+                    <div class="btn-group center-block" style="padding-top:20px;">
+                        <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            选择校验和多项式
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="#">CRC-8</a>
+                            </li>
+                            <li>
+                                <a href="#">CRC-12</a>
+                            </li>
+                            <li>
+                                <a href="#">CRC-16</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon1">地址</span>
+                        <input type="text" class="form-control" placeholder="11111111" aria-describedby="basic-addon1">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon1">控制</span>
+                        <input type="text" class="form-control" placeholder="00000011" aria-describedby="basic-addon1">
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="padding-top:10px;">
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon1">协议</span>
+                        <input type="text" class="form-control" placeholder="0000000000100001" aria-describedby="basic-addon1">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon1">数据</span>
+                        <input type="text" class="form-control" placeholder="" aria-describedby="basic-addon1">
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="padding-top:10px;">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <button type="button" class="btn btn-primary center-block">计算校验和</button>
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>校验和</h2>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        Basic panel example
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>
