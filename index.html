@@ -5,19 +5,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
     <title>Document</title>
 </head>
 
 <body>
     IP
-    <input id="IP" type="text" placeholder="192.168.1.0" /> 前缀
-    <input id="prefix" type="text" placeholder="24" /> 子网掩码
-    <input id="mask" type="text" placeholder="255.255.255.0" /> 子网数目
-    <input id="subnet" type="text" placeholder="2" />
+    <input id="IP" type="text" value="192.168.1.0" /> 前缀
+    <input id="prefix" type="text" value="24" /> 子网掩码
+    <input id="mask" type="text" value="255.255.255.0" /> 子网数目
+    <input id="subnet" type="text" value="100" />
     <br>子网1：
 </body>
 <script type="text/javascript">
-    console.log("test");
+    function getSubnetBit(num) {
+        var n = Number(num);
+        for (var i = 1; i < 100; i++) {
+            if (Math.pow(2, i) >= n) {
+                return i;
+            }
+        }
+    }
+    var ip = $("#IP").val();
+    var subnetnum = $("#subnet").val();
+    var bitNum = getSubnetBit(subnetnum);
+    console.log(bitNum);
 </script>
 
 </html>

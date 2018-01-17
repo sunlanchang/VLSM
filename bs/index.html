@@ -7,14 +7,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bootstrap 101 Template</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="js/jquery-3.2.1.min.js"></script>
 </head>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var dizhi = $("#dizhi").val();
+        var chushu = 1001;
+        var dizhiArray = new Array();
+        for (var i = 0; i < dizhi.length; i++) {
+            dizhiArray[i] = Number(dizhi[i]);
+        }
+        for (var i = 0; i < String(chushu).length - 1; i++) {
+            dizhiArray.push(0);
+        }
+        var cishu = dizhiArray.length - String(chushu).length + 1;
+        chushuLen = String(chushu).length;
+        for (var i = 1; i <= chushuLen; i++) {
+            ;
+        }
+    });
+</script>
 
 <body>
     <div class="container">
         <ul class="nav nav-tabs">
             <li role="presentation" class="active">
                 <a href="#">Home</a>
-            </li> 
+            </li>
             <li role="presentation">
                 <a href="#">Profile</a>
             </li>
@@ -51,7 +70,7 @@
                 <div class="col-md-6">
                     <div class="input-group">
                         <span class="input-group-addon" id="basic-addon1">地址</span>
-                        <input type="text" class="form-control" placeholder="11111111" aria-describedby="basic-addon1">
+                        <input id="dizhi" type="text" class="form-control" value="101110" aria-describedby="basic-addon1">
                     </div>
                 </div>
                 <div class="col-md-6">
