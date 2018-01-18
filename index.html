@@ -1,35 +1,132 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-    <title>Document</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap 101 Template</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="js/jquery-3.2.1.min.js"></script>
 </head>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var dizhi = $("#dizhi").val();
+        var chushu = 1001;
+        var dizhiArray = new Array();
+        for (var i = 0; i < dizhi.length; i++) {
+            dizhiArray[i] = Number(dizhi[i]);
+        }
+        for (var i = 0; i < String(chushu).length - 1; i++) {
+            dizhiArray.push(0);
+        }
+        var cishu = dizhiArray.length - String(chushu).length + 1;
+        chushuLen = String(chushu).length;
+        for (var i = 1; i <= chushuLen; i++) {
+            ;
+        }
+    });
+</script>
 
 <body>
-    IP
-    <input id="IP" type="text" value="192.168.1.0" /> 前缀
-    <input id="prefix" type="text" value="24" /> 子网掩码
-    <input id="mask" type="text" value="255.255.255.0" /> 子网数目
-    <input id="subnet" type="text" value="100" />
-    <br>子网1：
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <h1>用户输入数据</h1>
+            </div>
+            <div class="col-md-2">
+
+            </div>
+            <!-- <div class="col-md-2" style="margin-top:20px;">
+                <select class="form-control">
+                    <option>CRC-8</option>
+                    <option>CRC-10</option>
+                    <option>CRC-16</option>
+                </select>
+            </div> -->
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1">IP地址</span>
+                    <input id="dizhi" type="text" class="form-control" value="192.168.1.0" aria-describedby="basic-addon1">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1">后缀</span>
+                    <input type="text" class="form-control" placeholder="24" aria-describedby="basic-addon1">
+                </div>
+            </div>
+        </div>
+        <div class="row" style="padding-top:10px;">
+            <div class="col-md-6">
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1">子网掩码</span>
+                    <input type="text" class="form-control" placeholder="255.255.255.0" aria-describedby="basic-addon1">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1">子网数目</span>
+                    <input type="text" class="form-control" placeholder="" aria-describedby="basic-addon1">
+                </div>
+            </div>
+        </div>
+        <div class="row" style="padding-top:10px;">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <button type="button" class="btn btn-primary center-block">确定</button>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+        <div class="row">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>各个子网主机个数</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            这里显示需要输入的子网个数。
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="row" style="padding-top:10px;">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4">
+                        <button type="button" class="btn btn-primary center-block">确定</button>
+                    </div>
+                    <div class="col-md-4"></div>
+                </div>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>划分子网</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            这里显示划分后的子网。
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
 </body>
-<script type="text/javascript">
-    function getSubnetBit(num) {
-        var n = Number(num);
-        for (var i = 1; i < 100; i++) {
-            if (Math.pow(2, i) >= n) {
-                return i;
-            }
-        }
-    }
-    var ip = $("#IP").val();
-    var subnetnum = $("#subnet").val();
-    var bitNum = getSubnetBit(subnetnum);
-    console.log(bitNum);
-</script>
 
 </html>
