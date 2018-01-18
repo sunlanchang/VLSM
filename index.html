@@ -10,20 +10,25 @@
     <script src="js/jquery-3.2.1.min.js"></script>
 </head>
 <script type="text/javascript">
+    function getCloseNum(n) {
+        for (var i = 1; i < 100; i++) {
+            if (n <= Math.pow(2, i)) {
+                return Math.pow(2, i);
+            }
+        }
+    }
     $(document).ready(function () {
-        var dizhi = $("#dizhi").val();
-        var chushu = 1001;
-        var dizhiArray = new Array();
-        for (var i = 0; i < dizhi.length; i++) {
-            dizhiArray[i] = Number(dizhi[i]);
-        }
-        for (var i = 0; i < String(chushu).length - 1; i++) {
-            dizhiArray.push(0);
-        }
-        var cishu = dizhiArray.length - String(chushu).length + 1;
-        chushuLen = String(chushu).length;
-        for (var i = 1; i <= chushuLen; i++) {
-            ;
+        var subnetNum = $("#subnetNum").val();
+        var hostsNum = Array(50, 30, 10, 50);
+        hostsNum.sort(function (a, b) {
+            return a - b;
+        });
+        console.log(hostsNum);
+        var start = 1, tmp = 0;
+        for (var i = 0; i < hostsNum.length; i++) {
+            start = tmp + hostsNum[i];
+            tmp = getCloseNum(start);
+            console.log(tmp);
         }
     });
 </script>
@@ -42,13 +47,13 @@
             <div class="col-md-6">
                 <div class="input-group">
                     <span class="input-group-addon" id="basic-addon1">IP地址</span>
-                    <input id="dizhi" type="text" class="form-control" value="192.168.1.0" aria-describedby="basic-addon1">
+                    <input id="ip" type="text" class="form-control" value="192.168.1.0" aria-describedby="basic-addon1">
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="input-group">
                     <span class="input-group-addon" id="basic-addon1">后缀</span>
-                    <input type="text" class="form-control" placeholder="24" aria-describedby="basic-addon1">
+                    <input type="text" class="form-control" value="24" aria-describedby="basic-addon1">
                 </div>
             </div>
         </div>
@@ -62,7 +67,7 @@
             <div class="col-md-6">
                 <div class="input-group">
                     <span class="input-group-addon" id="basic-addon1">子网数目</span>
-                    <input type="text" class="form-control" placeholder="" aria-describedby="basic-addon1">
+                    <input id="subnetNum" type="text" class="form-control" value="4" aria-describedby="basic-addon1">
                 </div>
             </div>
         </div>
@@ -118,7 +123,7 @@
     </div>
     </div>
     </div>
-    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <!-- <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script> -->
     <script src="js/bootstrap.min.js"></script>
 </body>
 
