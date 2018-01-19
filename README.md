@@ -1,2 +1,2 @@
 # 子网可变长掩码VLSM
-# CRC算法sdf
+# CRC算法
