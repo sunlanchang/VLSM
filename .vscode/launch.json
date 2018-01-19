@@ -1,0 +1,20 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch Chrome and new instance of Chrome",
+            "type": "chrome",
+            "request": "launch",
+            "url": "/home/sun/VLSMsolver/bs/index.html",
+            "sourceMaps": true
+        },
+        {
+            "name": "Attach to Chrome",
+            "type": "chrome",
+            "request": "attach",
+            "port": 9222,
+            "sourceMaps": true,
+            "webRoot": "${workspaceRoot}"
+        }
+    ]
+}
