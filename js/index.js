@@ -71,16 +71,16 @@ var gui = (function () {
     };
 
     var printNetwork = function (network) {
-        $("#output tbody").append("<tr class='success'>");
-        $("#output tbody tr").append("<td class='success'>" + network.networkToString() + "</td>");
-        $("#output tbody tr").append("<td class='success'>" + network.netmaskToString() + "</td>");
-        $("#output tbody tr").append("<td class='success'>/" + network.prefixToString() + "</td>");
-        $("#output tbody tr").append("<td class='success'>" + network.firstHostToString() + "</td>");
-        $("#output tbody tr").append("<td class='success'>" + network.lastHostToString() + "</td>");
-        $("#output tbody tr").append("<td class='success'>" + network.broadcastToString() + "</td>");
-        $("#output tbody tr").append("<td class='success'>" + network.numberOfHostsToString() + "</td>");
+        var table = document.getElementById("output");
+        var row = table.insertRow();
+        row.insertCell().innerHTML = network.networkToString();
+        row.insertCell().innerHTML = network.netmaskToString();
+        row.insertCell().innerHTML = network.prefixToString();
+        row.insertCell().innerHTML = network.firstHostToString();
+        row.insertCell().innerHTML = network.lastHostToString();
+        row.insertCell().innerHTML = network.broadcastToString();
+        row.insertCell().innerHTML = network.numberOfHostsToString();
     };
-
     var printAllNetworks = function (majorNetwork) {
         var HTMLContent = "<thead> <tr class='success' >\
         <th class='success'>Network ID</th> <th class='success'>Netmask</th><th class='success'>Prefix</th> \
@@ -88,7 +88,7 @@ var gui = (function () {
         <th class='success'>Hosts available</th></tr ></thead >";
         $("#output").append(HTMLContent);
         $("#output").append("<tbody>");
-        gui.printNetwork(majorNetwork);
+        // gui.printNetwork(majorNetwork);
         majorNetwork.minorNetworks.forEach(function (network) {
             gui.printNetwork(network);
         });
