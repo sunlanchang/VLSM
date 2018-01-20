@@ -24,7 +24,9 @@ function calcuCRC(msg, crc) {
 
 $(document).ready(function () {
     $("#calcCRC").click(function () {
-        var msg = $("#dizhi").val(), crc = "1001", encoded = new Array();
-        console.log(calcuCRC(msg, crc).split(",").join(""));
+        var msg = $("#dizhi").val() + $("#kongzhi").val() + $("#xieyi").val() + $("#shuju").val();
+        var crcDuo = $("#crc").val(), encoded = new Array();
+        var crc = calcuCRC(msg, crcDuo).split(",").join("");
+        $("#crccode").text(crc);
     });
 });

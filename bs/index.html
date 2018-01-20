@@ -19,7 +19,7 @@
 
             </div>
             <div class="col-md-2" style="margin-top:20px;">
-                <select class="form-control">
+                <select id="crc" class="form-control">
                     <option value="100000111">CRC-8</option>
                     <option value="1100000001111">CRC-12</option>
                     <option value="11000000000000101">CRC-16</option>
@@ -37,7 +37,7 @@
             <div class="col-md-6">
                 <div class="input-group">
                     <span class="input-group-addon" id="basic-addon1">控制</span>
-                    <input type="text" class="form-control" value="00000011" aria-describedby="basic-addon1">
+                    <input id="kongzhi" type="text" class="form-control" value="00000011" aria-describedby="basic-addon1">
                 </div>
             </div>
         </div>
@@ -45,13 +45,13 @@
             <div class="col-md-6">
                 <div class="input-group">
                     <span class="input-group-addon" id="basic-addon1">协议</span>
-                    <input type="text" class="form-control" value="0000000000100001" aria-describedby="basic-addon1">
+                    <input id="xieyi" type="text" class="form-control" value="0000000000100001" aria-describedby="basic-addon1">
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="input-group">
                     <span class="input-group-addon" id="basic-addon1">数据</span>
-                    <input type="text" class="form-control" value="101010" aria-describedby="basic-addon1">
+                    <input id="shuju" type="text" class="form-control" value="101010" aria-describedby="basic-addon1">
                 </div>
             </div>
         </div>
@@ -68,7 +68,7 @@
                     <div class="panel panel-success">
                         <div class="panel-heading">校验和</div>
                         <div class="panel-body">
-                            <p>test</p>
+                            <code id="crccode"></code>
                         </div>
                     </div>
                 </div>
