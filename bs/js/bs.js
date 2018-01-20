@@ -28,5 +28,7 @@ $(document).ready(function () {
         var crcDuo = $("#crc").val(), encoded = new Array();
         var crc = calcuCRC(msg, crcDuo).split(",").join("");
         $("#crccode").text(crc);
+        $("#xieyi").text($("#select").val());
+        $("#shuju2").text($("#shuju").val())
     });
 });
