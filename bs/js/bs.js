@@ -21,6 +21,14 @@ function calcuCRC(msg, crc) {
     return encoded.slice(encoded.length - n + 1).toString();
 }
 
+function binToHex(bin) {
+    var binlen = bin.length;
+
+    for (var i = 1; binlen % 4 != 0 && i <= 4 - binlen % 4; i++) {
+        bin = "0" + bin;
+    }
+    
+}
 
 $(document).ready(function () {
     $("#calcCRC").click(function () {
@@ -30,5 +38,6 @@ $(document).ready(function () {
         $("#crccode").text(crc);
         $("#xieyi").text($("#select").val());
         $("#shuju2").text($("#shuju").val())
+        binToHex($("#shuju").val())
     });
 });
