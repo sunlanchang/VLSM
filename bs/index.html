@@ -5,23 +5,12 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap 101 Template</title>
+    <title>BS && XMY</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
     <div class="container">
-        <ul class="nav nav-tabs">
-            <li role="presentation" class="active">
-                <a href="#">Home</a>
-            </li>
-            <li role="presentation">
-                <a href="#">Profile</a>
-            </li>
-            <li role="presentation">
-                <a href="#">Messages</a>
-            </li>
-        </ul>
         <div class="row">
             <div class="col-md-8">
                 <h1>用户输入数据</h1>
@@ -31,9 +20,10 @@
             </div>
             <div class="col-md-2" style="margin-top:20px;">
                 <select class="form-control">
-                    <option>CRC-8</option>
-                    <option>CRC-10</option>
-                    <option>CRC-16</option>
+                    <option value="100000111">CRC-8</option>
+                    <option value="1100000001111">CRC-12</option>
+                    <option value="11000000000000101">CRC-16</option>
+                    <option value="100000100110000010001110110110111">CRC-32</option>
                 </select>
             </div>
         </div>
@@ -47,7 +37,7 @@
             <div class="col-md-6">
                 <div class="input-group">
                     <span class="input-group-addon" id="basic-addon1">控制</span>
-                    <input type="text" class="form-control" placeholder="00000011" aria-describedby="basic-addon1">
+                    <input type="text" class="form-control" value="00000011" aria-describedby="basic-addon1">
                 </div>
             </div>
         </div>
@@ -55,20 +45,20 @@
             <div class="col-md-6">
                 <div class="input-group">
                     <span class="input-group-addon" id="basic-addon1">协议</span>
-                    <input type="text" class="form-control" placeholder="0000000000100001" aria-describedby="basic-addon1">
+                    <input type="text" class="form-control" value="0000000000100001" aria-describedby="basic-addon1">
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="input-group">
                     <span class="input-group-addon" id="basic-addon1">数据</span>
-                    <input type="text" class="form-control" placeholder="" aria-describedby="basic-addon1">
+                    <input type="text" class="form-control" value="101010" aria-describedby="basic-addon1">
                 </div>
             </div>
         </div>
         <div class="row" style="padding-top:10px;">
             <div class="col-md-4"></div>
             <div class="col-md-4">
-                <button type="button" class="btn btn-primary center-block">计算校验和</button>
+                <button id="calcCRC" type="button" class="btn btn-primary center-block">计算校验和</button>
             </div>
             <div class="col-md-4"></div>
         </div>
@@ -119,8 +109,7 @@
     </div>
     <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/my.js"></script>
+    <script src="js/bs.js"></script>
 </body>
-<button id="b">test</button>
 
 </html>
