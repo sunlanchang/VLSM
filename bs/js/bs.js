@@ -21,7 +21,6 @@ function calcuCRC(msg, crc) {
     return encoded.slice(encoded.length - n + 1).toString();
 }
 
-function generateCRC(duox)
 
 $(document).ready(function () {
     $("#calcCRC").click(function () {
