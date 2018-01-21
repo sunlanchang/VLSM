@@ -44,6 +44,15 @@ function binToHex(bin) {
 }
 
 $(document).ready(function () {
+    $("#shuju").on("input", function () {
+        var msg = $("#dizhi").val() + $("#kongzhi").val() + $("#xieyi").val() + $("#shuju").val();
+        var crcDuo = $("#crc").val(), encoded = new Array();
+        var crc = calcuCRC(msg, crcDuo).split(",").join("");
+        $("#crccode").text(crc);
+        $("#xieyi").text(binToHex($("#select").val()));
+        $("#shuju2").text(binToHex($("#shuju").val()));
+        $("#fcs").text(binToHex(crc));
+    });
     $("#calcCRC").click(function () {
         var msg = $("#dizhi").val() + $("#kongzhi").val() + $("#xieyi").val() + $("#shuju").val();
         var crcDuo = $("#crc").val(), encoded = new Array();
@@ -51,6 +60,6 @@ $(document).ready(function () {
         $("#crccode").text(crc);
         $("#xieyi").text(binToHex($("#select").val()));
         $("#shuju2").text(binToHex($("#shuju").val()));
-        $("#fcs").text(binToHex(crc))
+        $("#fcs").text(binToHex(crc));
     });
 });
