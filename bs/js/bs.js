@@ -55,6 +55,7 @@ $(document).ready(function () {
             if (jianyan[i] == "0" || jianyan[i] == "1") { ; }
             else {
                 alert("请重新输入");
+                $("#shuju").val($("#shuju").val().slice(0, -1));
             }
         }
         $("#shuju2").text(binToHex($("#shuju").val()));
