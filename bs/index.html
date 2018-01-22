@@ -27,11 +27,8 @@
 <body>
     <div class="container">
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-10">
                 <h2>用户输入数据</h2>
-            </div>
-            <div class="col-md-2">
-
             </div>
             <div class="col-md-2" style="margin-top:20px;">
                 <select id="crc" class="form-control">
@@ -83,49 +80,52 @@
             <div class="col-md-4"></div>
         </div>
         <div class="row">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="panel panel-success">
-                        <div class="panel-heading">校验和</div>
-                        <div class="panel-body">
-                            <code id="crccode">等待计算</code>
-                        </div>
+            <div class="col-md-12">
+                <div class="panel panel-success">
+                    <div class="panel-heading">校验和</div>
+                    <div class="panel-body">
+                        <code id="crccode">等待计算</code>
                     </div>
                 </div>
             </div>
         </div>
         <div class="row">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="panel panel-primary">
-                        <div class="panel-heading">PPP数据帧</div>
-                        <table class="table table-condensed">
-                            <thead>
-                                <tr>
-                                    <th>标志</th>
-                                    <th>地址</th>
-                                    <th>控制</th>
-                                    <th>协议</th>
-                                    <th>数据</th>
-                                    <th>帧检测序列</th>
-                                    <th>标志</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td id="biaozhi">0x7E</td>
-                                    <td id="dizhi">0xFF</td>
-                                    <td id="kongzhi">0x03</td>
-                                    <td id="xieyi"></td>
-                                    <td id="shuju2"></td>
-                                    <td id="fcs"></td>
-                                    <td id="biaozhi">0x7E</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+            <div class="col-md-12">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">PPP数据帧</div>
+                    <table class="table table-condensed">
+                        <thead>
+                            <tr>
+                                <th>标志</th>
+                                <th>地址</th>
+                                <th>控制</th>
+                                <th>协议</th>
+                                <th>数据</th>
+                                <th>帧检测序列</th>
+                                <th>标志</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td id="biaozhi">0x7E</td>
+                                <td id="dizhi">0xFF</td>
+                                <td id="kongzhi">0x03</td>
+                                <td id="xieyi"></td>
+                                <td id="shuju2"></td>
+                                <td id="fcs"></td>
+                                <td id="biaozhi">0x7E</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
+        </div>
+        <div class="row" style="padding-top:10px;padding-bottom:10px;">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <button id="save" type="button" class="btn btn-success center-block">保存数据帧</button>
+            </div>
+            <div class="col-md-4"></div>
         </div>
     </div>
     </div>

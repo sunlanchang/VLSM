@@ -50,6 +50,13 @@ $(document).ready(function () {
         var crc = calcuCRC(msg, crcDuo).split(",").join("");
         $("#crccode").text(crc);
         $("#xieyi").text(binToHex($("#select").val()));
+        var jianyan = $("#shuju").val();
+        for (var i = 0; i < jianyan.length; i++) {
+            if (jianyan[i] == "0" || jianyan[i] == "1") { ; }
+            else {
+                alert("请重新输入");
+            }
+        }
         $("#shuju2").text(binToHex($("#shuju").val()));
         $("#fcs").text(binToHex(crc));
     });

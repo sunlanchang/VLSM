@@ -21,6 +21,6 @@ int main()
         for (; i < encoded.length() && encoded[i] != '1'; i++)
             ;
     }
-    cout << encoded.substr(encoded.length() - n + 1);
+    cout << encoded.substr(encoded.length() - n + 1)<<endl;;
     return 0;
 }
