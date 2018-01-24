@@ -363,7 +363,7 @@ var validate = (function () {
         inputFields: inputFields
     };
 })();
-5
+
 $("#form").submit(function (event) {
     // Stop page from reloading
     event.preventDefault();
@@ -371,6 +371,7 @@ $("#form").submit(function (event) {
     if (validate.inputFields()) {
         majorNetwork = calc.createMajorNetwork(majorNetwork[0], majorNetwork[1]);
         if (validate.hosts(majorNetwork, gui.readHosts())) {
+            // 划分子网
             majorNetwork.setMinorNetworks(calc.createMinorNetworks(majorNetwork, gui.readHosts()));
             gui.printAllNetworks(majorNetwork);
         }
