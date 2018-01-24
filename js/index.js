@@ -58,7 +58,16 @@ var gui = (function () {
 
     var readHosts = function () {
         var biggestFirst = (a, b) => b - a;
-        var subnets = $("#hosts").val().split(",").map(x => parseInt(x)).sort(biggestFirst);
+        var hosts = "", flag = false;
+        var subNum = Number($("#generate").val());
+        for (var i = 1; i <= subNum; i++) {
+            var id = "#subnet" + i;
+            if (flag)
+                hosts += ",";
+            flag = true;
+            hosts = hosts + $(id).val();
+        }
+        var subnets = hosts.split(",").map(x => parseInt(x)).sort(biggestFirst);
         return subnets;
     };
 
@@ -82,6 +91,7 @@ var gui = (function () {
         row.insertCell().innerHTML = network.numberOfHostsToString();
     };
     var printAllNetworks = function (majorNetwork) {
+        $("#output").empty();
         var HTMLContent = "<thead> <tr class='success' >\
         <th class='success'>Network ID</th> <th class='success'>Netmask</th><th class='success'>Prefix</th> \
         <th class='success'>First host</th><th class='success'>Last host</th> <th class='success'> Broadcast</th >\
@@ -340,7 +350,16 @@ var validate = (function () {
     var inputFields = function () {
         var network = $("#network").val();
         var netmask = $("#netmask").val();
-        var hosts = $("#hosts").val();
+        // var hosts = $("#hosts").val();
+        var hosts = "", flag = false;
+        var subNum = Number($("#generate").val());
+        for (var i = 1; i <= subNum; i++) {
+            var id = "#subnet" + i;
+            if (flag)
+                hosts += ",";
+            flag = true;
+            hosts = hosts + $(id).val();
+        }
         var validations = true;
 
         if (!validate.ip(network)) {
@@ -364,9 +383,65 @@ var validate = (function () {
     };
 })();
 
-$("#form").submit(function (event) {
+function isValidIP(ip) {
+    var reg = /^(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])$/
+    return reg.test(ip);
+}
+
+function a() {
+
+    $("#inser").after("<button id='generate' class='btn btn-outline-secondary' type='button'>确定</button>");
+
+};
+
+$(document).ready(function () {
+
+    $("#reset").click(function () {
+        window.location.reload();
+    });
+
+    $("#generate").blur(function () {
+        $("#insert").empty();
+        var n = $("#generate").val();
+        for (var i = 1; i <= n; i++) {
+            var data = "<div class='input-group col-4 mb-3'>\
+            <div class='input-group-prepend'><span class='input-group-text' id='basic-addon1'>\
+            第" + i + "号子网</span></div><input type='text' class='form-control' \
+            placeholder='主机数' id='subnet" + i + "' aria-label='Username' aria-describedby='basic-addon1'></div>"
+            $("#insert").append(data);
+        }
+        var data = '<div class="row" id="queding" style="padding-bottom:10px;">\
+        <div class="col-md-4"></div>\
+        <div class="col-md-4">\
+            <center>\
+                <button id="ready" class="btn center-block" type="button" onclick="main()" >确定</button>\
+            </center>\
+        </div>\
+        <div class="col-md-4"></div>\
+    </div>'
+        $("#queding").remove();
+        $("#insert_father").append(data);
+
+    });
+    var k = true;
+    $("#network").on("input", function () {
+        if (isValidIP($("#network").val())) {
+            $("#network").removeClass("is-invalid")
+            $("#network").addClass("is-valid")
+        }
+        else {
+            $("#network").removeClass("is-valid")
+            $("#network").addClass("is-invalid")
+            if (k)
+                $("#ipvaliditon").append("<div class='invalid-feedback'>请输入正确的IP</div>")
+            k = false;
+        }
+    });
+
+});
+
+function main() {
     // Stop page from reloading
-    event.preventDefault();
     var majorNetwork = gui.readNetwork();
     if (validate.inputFields()) {
         majorNetwork = calc.createMajorNetwork(majorNetwork[0], majorNetwork[1]);
@@ -382,4 +457,4 @@ $("#form").submit(function (event) {
     else {
         gui.setOutput('<p class="error">Input field error</p>');
     }
-});
+}
