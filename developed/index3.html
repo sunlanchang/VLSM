@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+
+    <script src="js/jquery.js"></script>
+    <script src="js/index.js"></script>
+    <title>VLSM Solver</title>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <span class="navbar-brand mb-0 h1">VLSM Solver</span>
+        <button class="btn btn-outline-light my-2 my-sm-0" id="reset" type="refresh">RESET</button>
+    </nav>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">VLSM &nbspIP地址划分工具</h1>
+            <p class="lead">按照IP地址可变长划分办法，自动完成划分过程。</p>
+        </div>
+    </div>
+    <!-- <h1>Hello, world!</h1> -->
+    <div class="container" style="padding-top:2em">
+        <form id="insert_father">
+            <div class="form-row">
+                <div class="col-md-6 mb-3" id="ipvaliditon">
+                    <label>在这里输入要划分的IP地址</label>
+                    <input type="text" class="form-control" id="network" value="192.168.1.1">
+                </div>
+                <div class="col-md-3">
+                    <label>前缀</label>
+                    <input type="text" class="form-control" id="netmask" value="24">
+                </div>
+                <div class="col-md-3 mb-3">
+                    <label>这里输入划分子网数</label>
+                    <input type="text" class="form-control" id="generate" placeholder="子网数" value="">
+                </div>
+
+            </div>
+            <div class="form-row mt-4" id="insert">
+
+            </div>
+
+        </form>
+        <form id="form" class="form-horizontal">
+
+        </form>
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+                <table id="output" class="table">
+
+                </table>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+
+    </div>
+</body>
+
+
+</html>
