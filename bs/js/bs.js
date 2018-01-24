@@ -54,12 +54,14 @@ $(document).ready(function () {
         for (var i = 0; i < jianyan.length; i++) {
             if (jianyan[i] == "0" || jianyan[i] == "1") { ; }
             else {
-                alert("请重新输入");
+                alert("只能输入0或1哦😯😯😯");
                 $("#shuju").val($("#shuju").val().slice(0, -1));
             }
         }
         $("#shuju2").text(binToHex($("#shuju").val()));
         $("#fcs").text(binToHex(crc));
+        var data = "<data>0x7E,0xFF,0x03" + "," + binToHex($("#select").val()) + "," + binToHex($("#shuju").val()) + "," + binToHex($("#fcs").val()) + "," + "0x7E</data>";
+        $("#save").attr("href", "data:text/html;charset=utf-8," + data);
     });
     $("#calcCRC").click(function () {
         var msg = $("#dizhi").val() + $("#kongzhi").val() + $("#xieyi").val() + $("#shuju").val();
@@ -69,5 +71,7 @@ $(document).ready(function () {
         $("#xieyi").text(binToHex($("#select").val()));
         $("#shuju2").text(binToHex($("#shuju").val()));
         $("#fcs").text(binToHex(crc));
+        var data = "0x7E,0xFF,0x03" + "," + binToHex($("#select").val()) + "," + binToHex($("#shuju").val()) + "," + binToHex($("#fcs").val()) + "," + "0x7E";
+        $("#save").attr("href", "data:text/html," + data);
     });
 });
