@@ -209,6 +209,7 @@ var calc = (function () {
     // Calculates number of possible hosts in a network based on a network maks
     // Input - Recives a array of 32 elements. Each element represents a binary in a IPv4 network mask
     // Output - The number of hosts possible in the subnetmask
+    //子网掩码的最大主机数
     var numberOfHostsPriv = function (netmask) {
         var hosts = netmask.filter(x => (x === 0)).length; // create function is zero
         hosts = (Math.pow(2, hosts) - 2);
@@ -227,6 +228,7 @@ var calc = (function () {
     // Calculates how many hosts that are needed for a certain network
     // Input - The number of hosts that the network should contain
     // Output - A array, where the elements represent a binary network mask
+    //通过主机数计算需要的子网掩码
     var subnetRequiredPriv = function (hosts) {
         var hostBits = Math.ceil(Math.log2(parseInt(hosts) + 2));
         var requiredNetmask = new Array(32).fill(0);
