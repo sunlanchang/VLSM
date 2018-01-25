@@ -451,10 +451,12 @@ function main() {
             gui.printAllNetworks(majorNetwork);
         }
         else {
-            gui.setOutput('<p class="error">Network too small</p>');
+            // gui.setOutput('<p class="error">Network too small</p>');
+            alert('主机数太多！');
         }
     }
     else {
-        gui.setOutput('<p class="error">Input field error</p>');
+        // gui.setOutput('<p class="error">Input field error</p>');
+        alert('输入数据有误！');
     }
 }
