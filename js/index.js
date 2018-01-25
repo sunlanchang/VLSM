@@ -414,7 +414,7 @@ $(document).ready(function () {
         <div class="col-md-4"></div>\
         <div class="col-md-4">\
             <center>\
-                <button id="ready" class="btn center-block" type="button" onclick="main()" >确定</button>\
+                <button id="ready" class="btn" type="button" onclick="main()" >确定</button>\
             </center>\
         </div>\
         <div class="col-md-4"></div>\
